@@ -39,14 +39,11 @@ namespace Contfy
             umUsuario.setUsuario(tbLoginUsuario.Text);
             umUsuario.setSenha(tbLoginSenha.Text);
 
-            UsuarioBLL.validaDados(umUsuario, 'i');
+            UsuarioBLL.validaDadosLogin(umUsuario);
             if (Erro.getErro())
                 MessageBox.Show(Erro.getMens());
             else
                 MessageBox.Show("Dados inseridos com sucesso!");
-
-
-            
         }
     }
 }

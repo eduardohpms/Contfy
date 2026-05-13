@@ -277,6 +277,7 @@
             this.mtbCEP.Name = "mtbCEP";
             this.mtbCEP.Size = new System.Drawing.Size(100, 23);
             this.mtbCEP.TabIndex = 6;
+            this.mtbCEP.Leave += new System.EventHandler(this.mtbCEP_Leave);
             // 
             // cbEstado
             // 

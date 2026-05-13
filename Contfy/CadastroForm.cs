@@ -22,32 +22,41 @@ namespace Contfy
         }
         private void btnCCriarConta_Click(object sender, EventArgs e)
         {
-            UsuarioForm telaLogin = new UsuarioForm();
-            telaLogin.Show();
-            this.Close();
 
-            UsuarioMdl umUsuario = new UsuarioMdl();
+            UsuarioMdl usuario = new UsuarioMdl();
 
-            umUsuario.setNome(tbNome.Text);
-            umUsuario.setUsuario(tbUsuario.Text);
+            usuario.setNome(tbNome.Text);
+            usuario.setEmail(tbEmail.Text);
+            usuario.setSenha(tbSenha.Text);
 
-            string senhaCripto = Criptografia.criptografarSenha(tbSenha.Text);
-            umUsuario.setSenha(senhaCripto);
+            UsuarioBLL.ValidaDadosCadastro(usuario, 'i');
 
-            umUsuario.setEmail(tbEmail.Text);
-            umUsuario.setTelefone(mtbTelefone.Text);
-            umUsuario.setCep(mtbCEP.Text);
-            umUsuario.setRua(tbRua.Text);
-            umUsuario.setBairro(tbBairro.Text);
-            umUsuario.setCidade(tbCidade.Text);
-            umUsuario.setEstado(cbEstado.Text);
-
-            UsuarioBLL.validaDados(umUsuario, 'i');
             if (Erro.getErro())
+            {
                 MessageBox.Show(Erro.getMens());
+                return;
+            }
             else
-                //UsuarioDAL.salvar(umUsuario);
-                MessageBox.Show("Cadastro realizado!");
+            {
+                MessageBox.Show("Cadastro realizado com sucesso!");
+
+                // ABRIR LOGIN
+                UsuarioForm tela = new UsuarioForm();
+                tela.Show();
+
+                // FECHAR CADASTRO
+                this.Close();
+            }
+        }
+
+        private void mtbCEP_Leave(object sender, EventArgs e)
+        {
+            CepMdl cep = CepBLL1.BuscarCEP(mtbCEP.Text);
+
+            tbRua.Text = cep.logradouro;
+            tbBairro.Text = cep.bairro;
+            tbCidade.Text = cep.localidade;
+            cbEstado.Text = cep.uf;
         }
     }
 }

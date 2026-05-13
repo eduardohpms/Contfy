@@ -40,5 +40,6 @@ namespace Contfy.Models
         public String getBairro() { return bairro; }
         public String getCidade() { return cidade; }
         public String getEstado() { return estado; }
+
     }
 }

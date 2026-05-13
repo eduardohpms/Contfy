@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +52,7 @@
     <Compile Include="BLL\CadastrBLL.cs" />
     <Compile Include="BLL\ContainerAdminBLL.cs" />
     <Compile Include="BLL\UsuarioBLL.cs" />
+    <Compile Include="BLL\Utils\CepBLL1.cs" />
     <Compile Include="BLL\Utils\Criptografia.cs" />
     <Compile Include="CadastroForm.cs">
       <SubType>Form</SubType>
@@ -66,7 +70,7 @@
     <Compile Include="DAL\UsuarioDAL.cs" />
     <Compile Include="Erro.cs" />
     <Compile Include="Models\ContainerMdl.cs" />
-    <Compile Include="Models\MovimentacaoMdl.cs" />
+    <Compile Include="Models\CepMdl.cs" />
     <Compile Include="Models\UsuarioMdl.cs" />
     <Compile Include="UsuarioContainerForm.cs">
       <SubType>Form</SubType>
@@ -104,6 +108,7 @@
     <EmbeddedResource Include="UsuarioForm.resx">
       <DependentUpon>UsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
