@@ -64,6 +64,16 @@ namespace Contfy.BLL
                 return;
             }
 
+            // VALIDA FORMATO DO EMAIL
+            string padraoEmail =
+                @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            if (!Regex.IsMatch(usuario.getEmail(), padraoEmail))
+            {
+                Erro.setMens("Formato de email inválido!");
+                return;
+            }
+
             // SENHA
             if (usuario.getSenha().Trim().Equals(""))
             {
