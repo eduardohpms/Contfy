@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\CadastrBLL.cs" />
     <Compile Include="BLL\ContainerAdminBLL.cs" />
     <Compile Include="BLL\UsuarioBLL.cs" />
     <Compile Include="BLL\Utils\CepBLL1.cs" />

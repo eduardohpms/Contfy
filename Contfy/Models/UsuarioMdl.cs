@@ -14,10 +14,10 @@ namespace Contfy.Models
         public String senha;
         public String telefone;
         public String cep;
-        public String rua;
+        public String logradouro;
         public String bairro;
-        public String cidade;
-        public String estado;
+        public String localidade;
+        public String uf;
 
         public void setNome(String _nome) { nome = _nome; }
         public void setUsuario(String _usuario) { usuario = _usuario; }
@@ -25,10 +25,10 @@ namespace Contfy.Models
         public void setEmail(String _email) { email = _email; } 
         public void setTelefone(String _telefone) { telefone = _telefone; }
         public void setCep(String _cep) { cep = _cep; }
-        public void setRua(String _rua) { rua = _rua; }
+        public void setLogradouro(String _logradouro) { logradouro = _logradouro; }
         public void setBairro(String _bairro) { bairro = _bairro; }
-        public void setCidade(String _cidade) { cidade = _cidade; }
-        public void setEstado(String _estado) { estado = _estado; }
+        public void setLocalidade(String _localidade) { localidade = _localidade; }
+        public void setUf(String _uf) { uf = _uf; }
 
         public String getNome() { return nome; }
         public String getUsuario() { return usuario; }
@@ -36,10 +36,10 @@ namespace Contfy.Models
         public String getEmail() { return email; }
         public String getTelefone() { return telefone; }
         public String getCep() { return cep; }
-        public String getRua() { return rua; }
+        public String getLogradouro() { return logradouro; }
         public String getBairro() { return bairro; }
-        public String getCidade() { return cidade; }
-        public String getEstado() { return estado; }
+        public String getLocalidade() { return localidade; }
+        public String getUf() { return uf; }
 
     }
 }

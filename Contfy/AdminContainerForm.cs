@@ -16,5 +16,10 @@ namespace Contfy
         {
             InitializeComponent();
         }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

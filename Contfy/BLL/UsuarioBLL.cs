@@ -27,15 +27,15 @@ namespace Contfy.BLL
         public static void validaDadosLogin(UsuarioMdl umUsuario)
         {
             Erro.setErro(false);
-            if (umUsuario.getUsuario().Equals(""))
+            if (string.IsNullOrWhiteSpace(umUsuario.getUsuario()))
             {
-                Erro.setMens("O usuário é obrigatório!");
+                Erro.setMens("O usuário é de preenchimento obrigatório!");
                 return;
             }
 
-            if (umUsuario.getSenha().Equals(""))
+            if (string.IsNullOrWhiteSpace(umUsuario.getSenha()))
             {
-                Erro.setMens("A senha é obrigatória!");
+                Erro.setMens("A senha é de preenchimento obrigatória!");
                 return;
             }
         }
@@ -47,27 +47,27 @@ namespace Contfy.BLL
             // NOME
             if (usuario.getNome().Trim().Equals(""))
             {
-                Erro.setMens("O nome é obrigatório!");
+                Erro.setMens("O nome é de preenchimento obrigatório!");
                 return;
             }
-            //// USUÁRIO
-            //if (usuario.getUsuario().Trim().Equals(""))
-            //{
-            //    Erro.setMens("O usuário é obrigatório!");
-            //    return;
-            //}
+            // USUÁRIO
+            if (usuario.getUsuario().Equals(""))
+            {
+                Erro.setMens("O usuário é de preenchimento obrigatório!");
+                return;
+            }
 
             // EMAIL
             if (usuario.getEmail().Trim().Equals(""))
             {
-                Erro.setMens("O email é obrigatório!");
+                Erro.setMens("O email é de preenchimento obrigatório!");
                 return;
             }
 
             // SENHA
             if (usuario.getSenha().Trim().Equals(""))
             {
-                Erro.setMens("A senha é obrigatória!");
+                Erro.setMens("A senha é de preenchimento obrigatória!");
                 return;
             }
 
@@ -77,36 +77,22 @@ namespace Contfy.BLL
                 return;
             }
 
-            ////TELEFONE
-            //if (usuario.getTelefone().Trim().Equals(""))
-            //{
-            //    Erro.setMens("O telefone é obrigatório!");
-            //    return;
-            //}
-
-            if (usuario.getTelefone().Length < 10)
-            {
-                Erro.setMens("Telefone inválido!");
-                return;
-            }
-
-            //CEP
-            if (usuario.getCep().Trim().Equals(""))
-            {
-                Erro.setMens("O CEP é obrigatório!");
-                return;
-            }
-
-            if (!long.TryParse(usuario.getCep(), out _))
-            {
-                Erro.setMens("O CEP deve conter apenas números!");
-                return;
-            }
-
             // CRIPTOGRAFAR SENHA
             usuario.setSenha(
                 Criptografia.criptografarSenha(usuario.getSenha())
             );
+
+            if (usuario.getLogradouro().Trim().Equals(""))
+            {
+                Erro.setMens("A rua é de preenchimento obrigatória!");
+                return;
+            }
+
+            if (usuario.getBairro().Trim().Equals(""))
+            {
+                Erro.setMens("O bairro é de preenchimento obrigatória!");
+                return;
+            }
 
             // CRIAR OBJETO DAL
             UsuarioDAL dal = new UsuarioDAL();
@@ -123,6 +109,5 @@ namespace Contfy.BLL
             //    dal.Alterar(usuario);
             //}
         }
-
     }
 }

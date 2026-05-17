@@ -26,8 +26,14 @@ namespace Contfy
             UsuarioMdl usuario = new UsuarioMdl();
 
             usuario.setNome(tbNome.Text);
+            usuario.setUsuario(tbUsuario.Text);
             usuario.setEmail(tbEmail.Text);
             usuario.setSenha(tbSenha.Text);
+            usuario.setTelefone(mtbTelefone.Text);
+            usuario.setLogradouro(tbRua.Text);
+            usuario.setBairro(tbBairro.Text);
+            usuario.setLocalidade(tbCidade.Text);
+            usuario.setUf(tbEstado.Text);
 
             UsuarioBLL.ValidaDadosCadastro(usuario, 'i');
 
@@ -51,12 +57,13 @@ namespace Contfy
 
         private void mtbCEP_Leave(object sender, EventArgs e)
         {
-            CepMdl cep = CepBLL1.BuscarCEP(mtbCEP.Text);
+            UsuarioMdl cep = CepBLL1.BuscarCEP(mtbCEP.Text);
 
-            tbRua.Text = cep.logradouro;
-            tbBairro.Text = cep.bairro;
-            tbCidade.Text = cep.localidade;
-            cbEstado.Text = cep.uf;
+            tbRua.Text = cep.getLogradouro();
+            tbBairro.Text = cep.getBairro();
+            tbCidade.Text = cep.getLocalidade();
+            tbEstado.Text = cep.getUf();
+
         }
     }
 }

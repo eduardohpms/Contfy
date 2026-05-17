@@ -47,11 +47,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.mtbCEP = new System.Windows.Forms.MaskedTextBox();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.tbRua = new System.Windows.Forms.TextBox();
             this.tbCidade = new System.Windows.Forms.TextBox();
             this.tbBairro = new System.Windows.Forms.TextBox();
             this.btnCCriarConta = new System.Windows.Forms.Button();
+            this.tbEstado = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -193,13 +193,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tbEstado);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.mtbCEP);
-            this.groupBox2.Controls.Add(this.cbEstado);
             this.groupBox2.Controls.Add(this.tbRua);
             this.groupBox2.Controls.Add(this.tbCidade);
             this.groupBox2.Controls.Add(this.tbBairro);
@@ -279,21 +279,6 @@
             this.mtbCEP.TabIndex = 6;
             this.mtbCEP.Leave += new System.EventHandler(this.mtbCEP_Leave);
             // 
-            // cbEstado
-            // 
-            this.cbEstado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Items.AddRange(new object[] {
-            "SP",
-            "RJ",
-            "MG",
-            "PR",
-            "SC"});
-            this.cbEstado.Location = new System.Drawing.Point(24, 217);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(200, 23);
-            this.cbEstado.TabIndex = 5;
-            // 
             // tbRua
             // 
             this.tbRua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -336,6 +321,15 @@
             this.btnCCriarConta.UseVisualStyleBackColor = false;
             this.btnCCriarConta.Click += new System.EventHandler(this.btnCCriarConta_Click);
             // 
+            // tbEstado
+            // 
+            this.tbEstado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEstado.Location = new System.Drawing.Point(24, 217);
+            this.tbEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.tbEstado.Name = "tbEstado";
+            this.tbEstado.Size = new System.Drawing.Size(200, 23);
+            this.tbEstado.TabIndex = 21;
+            // 
             // CadastroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,7 +367,6 @@
         private System.Windows.Forms.TextBox tbCidade;
         private System.Windows.Forms.TextBox tbBairro;
         private System.Windows.Forms.Button btnCCriarConta;
-        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.MaskedTextBox mtbTelefone;
         private System.Windows.Forms.MaskedTextBox mtbCEP;
         private System.Windows.Forms.Label label2;
@@ -386,5 +379,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tbEstado;
     }
 }
