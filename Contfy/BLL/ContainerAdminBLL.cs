@@ -9,18 +9,59 @@ namespace Contfy.BLL
 {
     internal class ContainerAdminBLL
     {
-        public static void validaDadosAdicionar(UsuarioMdl umUsuario)
+        public static void validaDadosAdicionar(ContainerMdl ADDContainer, char op)
         {
             Erro.setErro(false);
-            if (string.IsNullOrWhiteSpace(umUsuario.getUsuario()))
+            if (ADDContainer.getCodigo().Trim().Equals(""))
             {
-                Erro.setMens("O usuário é obrigatório!");
+                Erro.setMens("O código é de preenchimento obrigatório!");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(umUsuario.getSenha()))
+            if (ADDContainer.getCodigo().Trim().Length == 10)
             {
-                Erro.setMens("A senha é obrigatória!");
+                Erro.setMens("O código deve conter 10 caracteres!");
+                return;
+            }
+
+            // NOME
+            if (ADDContainer.getNome().Trim().Equals(""))
+            {
+                Erro.setMens("O nome é de preenchimento obrigatório!");
+                return;
+            }
+
+            // STATUS
+            if (ADDContainer.getStatus().Trim().Equals(""))
+            {
+                Erro.setMens("O status é de preenchimento obrigatório!");
+                return;
+            }
+
+            // LOCALIZAÇÃO
+            if (ADDContainer.getLocalizacao().Trim().Equals(""))
+            {
+                Erro.setMens("A localização é de preenchimento obrigatório!");
+                return;
+            }
+        }
+
+        public static void validaDadosAlterar(ContainerMdl ALContainer, char op)
+        {
+            Erro.setErro(false);
+            if (ALContainer.getCodigo().Trim().Equals(""))
+            {
+                Erro.setMens("O código é de preenchimento obrigatório!");
+                return;
+            }
+        }
+
+        public static void validaDadosDeletar(ContainerMdl DELContainer, char op)
+        {
+            Erro.setErro(false);
+            if (DELContainer.getCodigo().Trim().Equals(""))
+            {
+                Erro.setMens("O código é de preenchimento obrigatório!");
                 return;
             }
         }

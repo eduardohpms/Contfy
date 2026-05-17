@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbCodigo = new System.Windows.Forms.TextBox();
+            this.tbNome = new System.Windows.Forms.TextBox();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.tbLocalizacao = new System.Windows.Forms.TextBox();
+            this.tbResponsavel = new System.Windows.Forms.TextBox();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -46,51 +46,50 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvContainer)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 62);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbCodigo.Location = new System.Drawing.Point(109, 62);
+            this.tbCodigo.Margin = new System.Windows.Forms.Padding(2);
+            this.tbCodigo.Name = "tbCodigo";
+            this.tbCodigo.Size = new System.Drawing.Size(200, 20);
+            this.tbCodigo.TabIndex = 0;
             // 
-            // textBox2
+            // tbNome
             // 
-            this.textBox2.Location = new System.Drawing.Point(109, 98);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 20);
-            this.textBox2.TabIndex = 1;
+            this.tbNome.Location = new System.Drawing.Point(109, 98);
+            this.tbNome.Margin = new System.Windows.Forms.Padding(2);
+            this.tbNome.Name = "tbNome";
+            this.tbNome.Size = new System.Drawing.Size(200, 20);
+            this.tbNome.TabIndex = 1;
             // 
-            // comboBox1
+            // cbStatus
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Items.AddRange(new object[] {
             "No porto",
             "Em transito",
             "Entregue"});
-            this.comboBox1.Location = new System.Drawing.Point(109, 134);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.Text = "Selecione...";
+            this.cbStatus.Location = new System.Drawing.Point(109, 134);
+            this.cbStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(200, 21);
+            this.cbStatus.TabIndex = 2;
             // 
-            // textBox3
+            // tbLocalizacao
             // 
-            this.textBox3.Location = new System.Drawing.Point(109, 171);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 3;
+            this.tbLocalizacao.Location = new System.Drawing.Point(109, 171);
+            this.tbLocalizacao.Margin = new System.Windows.Forms.Padding(2);
+            this.tbLocalizacao.Name = "tbLocalizacao";
+            this.tbLocalizacao.Size = new System.Drawing.Size(200, 20);
+            this.tbLocalizacao.TabIndex = 3;
             // 
-            // textBox4
+            // tbResponsavel
             // 
-            this.textBox4.Location = new System.Drawing.Point(109, 210);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(200, 20);
-            this.textBox4.TabIndex = 4;
+            this.tbResponsavel.Location = new System.Drawing.Point(109, 210);
+            this.tbResponsavel.Margin = new System.Windows.Forms.Padding(2);
+            this.tbResponsavel.Name = "tbResponsavel";
+            this.tbResponsavel.Size = new System.Drawing.Size(200, 20);
+            this.tbResponsavel.TabIndex = 4;
             // 
             // btnAdicionar
             // 
@@ -120,6 +119,7 @@
             this.btnAlterar.TabIndex = 6;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnExcluir
             // 
@@ -134,6 +134,7 @@
             this.btnExcluir.TabIndex = 7;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // label2
             // 
@@ -225,13 +226,14 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnAdicionar);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbResponsavel);
+            this.Controls.Add(this.tbLocalizacao);
+            this.Controls.Add(this.cbStatus);
+            this.Controls.Add(this.tbNome);
+            this.Controls.Add(this.tbCodigo);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdminContainerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin de Container";
             ((System.ComponentModel.ISupportInitialize)(this.dgvContainer)).EndInit();
             this.ResumeLayout(false);
@@ -241,11 +243,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbCodigo;
+        private System.Windows.Forms.TextBox tbNome;
+        private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.TextBox tbLocalizacao;
+        private System.Windows.Forms.TextBox tbResponsavel;
         private System.Windows.Forms.Button btnAdicionar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluir;

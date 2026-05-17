@@ -27,13 +27,13 @@ namespace Contfy.BLL
         public static void validaDadosLogin(UsuarioMdl umUsuario)
         {
             Erro.setErro(false);
-            if (string.IsNullOrWhiteSpace(umUsuario.getUsuario()))
+            if (umUsuario.getUsuario().Equals(""))
             {
                 Erro.setMens("O usuário é de preenchimento obrigatório!");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(umUsuario.getSenha()))
+            if (umUsuario.getSenha().Equals(""))
             {
                 Erro.setMens("A senha é de preenchimento obrigatória!");
                 return;
@@ -91,6 +91,18 @@ namespace Contfy.BLL
             if (usuario.getBairro().Trim().Equals(""))
             {
                 Erro.setMens("O bairro é de preenchimento obrigatória!");
+                return;
+            }
+
+            if (usuario.getLocalidade().Trim().Equals(""))
+            {
+                Erro.setMens("A cidade é de preenchimento obrigatória!");
+                return;
+            }
+
+            if (usuario.getUf().Trim().Equals(""))
+            {
+                Erro.setMens("O estado é de preenchimento obrigatória!");
                 return;
             }
 
